@@ -475,7 +475,7 @@ hr {
     .container {
         padding-top: 10em;
         display: flex;
-        @include screen('tablet') {
+        @media screen and (max-width: 1200px) {
             flex-flow: row wrap;
             padding-top: 5em;
         }
@@ -511,14 +511,15 @@ hr {
         .item {
             flex-grow: 0;
             flex-shrink: 1;
-            flex-basis: 22%;
-            margin: 0 1.5%;
+            flex-basis: 23%;
+            margin: 0 1%;
             height: 24em;
             position: relative;
-            @include screen('tablet') {
+            @media screen and (max-width: 1200px) {
                 flex-basis: 45%;
                 margin: 0 auto 2em;
             }
+
             @include screen('mobile') {
                 max-width: 300px;
                 flex-basis: 80%;
@@ -532,9 +533,9 @@ hr {
                 height: 100%;
                 left: 0;
                 top: 0;
-                display: flex;
-                align-items: flex-end;
-                padding: 2em;
+                flex-flow: row wrap;
+                align-content: flex-end;
+                padding: 2em 1.5em;
                 border: 1px solid transparent;
                 border-image: linear-gradient(145deg, $secondaryColor, $lightColor);
                 border-image-slice: 1;
@@ -556,18 +557,34 @@ hr {
                     left: 2em;
                 }
 
-                span {
+                h3 {
                     color: #fff;
-                    font-size: 2em;
+                    font-size: 1.75em;
                     line-height: 1.35em;
                     text-align: left;
                     display: block;
+                    flex-grow: 0;
+                    flex-shrink: 1;
+                    flex-basis: 100%;
+                    margin: 0 0 0.5em;
+                    br {
+                        display: none;
+                    }
                     @include screen('tablet') {
                         font-size: 1.5em;
                         br {
                             display: none;
                         }
                     }
+                }
+                p {
+                    font-size: 0.938em;
+                    flex-grow: 0;
+                    flex-shrink: 1;
+                    flex-basis: 100%;
+                    margin: 0;
+                    height: 3em;
+                    text-align: left;
                 }
             }
         }
