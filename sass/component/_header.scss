@@ -600,8 +600,7 @@ $cubic: cubic-bezier(0.4, 0.01, 0.165, 0.99);
 $menuItems: 7;
 
 .sidebar {
-    background: url(../images/auo-main-menu-m.png) no-repeat bottom right $primaryColor;
-    background-size: 75%;
+    background: $primaryColor;
     position: fixed;
     top: 0;
     width: 100%;
@@ -614,11 +613,6 @@ $menuItems: 7;
 
     @include screen('tablet') {
         display: block;
-    }
-
-    @include screen('mobile') {
-        background: url(../images/auo-main-menu-m.png) no-repeat bottom right $primaryColor;
-        background-size: 100%;
     }
 
     nav {
