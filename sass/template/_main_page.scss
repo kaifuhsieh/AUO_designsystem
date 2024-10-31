@@ -53,7 +53,38 @@ hr {
         background-position: 0px 50%;
     }
 }
-
+@keyframes scrollDown {
+    0% {
+        transform-origin: top;
+        transform: scaleY(0);
+    }
+    45% {
+        transform-origin: top;
+        transform: scaleY(1);
+    }
+    55% {
+        transform-origin: bottom;
+        transform: scaleY(1);
+    }
+    100% {
+        transform-origin: bottom;
+        transform: scaleY(0);
+    }
+}
+@keyframes scrollmouse {
+    0% {
+        transform: translate(-50%, 0px);
+        opacity: 0;
+    }
+    50% {
+        transform: translate(-50%, 8px);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, 16px);
+        opacity: 0;
+    }
+}
 .kv {
     min-height: 800px;
     display: flex;
@@ -91,10 +122,63 @@ hr {
             transform: scale(0.4);
         }
     }
+    .scroll-down {
+        position: absolute;
+        right: 30px;
+        bottom: 70px;
+        width: 1px;
+        height: 80px;
+        background: #61caff;
+        animation: scrollDown 1s ease-in-out infinite;
+        margin: 0 auto; //---you can romove this line---
+        @include screen('mobile') {
+            display: none;
+        }
+    }
+    .scroll-mouse {
+        position: absolute;
+        right: 1em;
+        bottom: 0px;
+        width: 30px;
+        height: 50px;
+        border: 2px solid #61caff;
+        border-radius: 50px;
+        cursor: pointer;
+        overflow: hidden;
+        margin: 0 auto; //---you can romove this line---
+        @include screen('mobile') {
+            display: none;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 20px;
+            width: 6px;
+            height: 6px;
+            border-radius: 100%;
+            transform: translateX(-50%);
+            background: #61caff;
+            animation: scrollmouse 1s ease infinite;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 5px;
+            width: 6px;
+            height: 15px;
+            border-radius: 3px;
+            transform: translateX(-50%);
+            background: #61caff;
+        }
+    }
 
     .kv_info {
         padding-top: 120px;
         text-align: left;
+        position: relative;
         @include screen('tablet') {
             padding-top: 200px;
         }
@@ -176,7 +260,7 @@ hr {
             background: linear-gradient(
                 145deg,
                 rgba(0, 205, 255, 1) 20%,
-                rgba(33, 143, 221, 1) 50%,
+                rgb(11, 105, 173) 50%,
                 rgba(87, 255, 190, 1) 80%
             );
             background-size: 150%;
@@ -249,10 +333,36 @@ hr {
         }
     }
 }
-
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
 .ds_info {
     padding: 5em 0 !important;
     position: relative;
+    overflow: visible;
+    &:after {
+        position: absolute;
+        content: '';
+        width: 40%;
+        left: -15%;
+        top: 45%;
+        aspect-ratio: 1/1;
+        background: url(../images/circle.svg) center center no-repeat;
+        background-size: 100%;
+        animation: rotate 10s linear infinite;
+        pointer-events: none;
+        @include screen('mobile') {
+            width: 100%;
+            top: auto;
+            bottom: 15%;
+            left: -45%;
+        }
+    }
 
     .container {
         position: relative;
@@ -297,7 +407,7 @@ hr {
 
     .ds_info_content {
         display: flex;
-        @include screen('mobile') {
+        @include screen('tablet') {
             flex-flow: row wrap;
         }
         .left,
@@ -305,19 +415,20 @@ hr {
             flex-grow: 0;
             flex-shrink: 1;
             flex-basis: 50%;
-            @include screen('mobile') {
+            @include screen('tablet') {
                 flex-basis: 100%;
             }
         }
 
         .left {
             text-align: left;
-            @include screen('mobile') {
+            padding-right: 2em;
+            @include screen('tablet') {
                 margin-bottom: 3em;
             }
             h2.title {
                 margin-bottom: 3em;
-                @include screen('mobile') {
+                @include screen('tablet') {
                     margin-bottom: 0;
                 }
             }
@@ -325,7 +436,7 @@ hr {
             p {
                 text-align: left;
                 max-width: 660px;
-                @include screen('mobile') {
+                @include screen('tablet') {
                     font-size: 1em;
                     max-width: 90%;
                 }
@@ -334,6 +445,7 @@ hr {
         .right {
             .img-container {
                 width: 100%;
+                overflow: hidden;
                 img {
                     width: 100%;
                 }
@@ -381,20 +493,13 @@ hr {
             }
         }
 
-        a {
+        .item {
             flex-grow: 0;
             flex-shrink: 1;
-            flex-basis: 20%;
-            margin: 0 2.5%;
+            flex-basis: 22%;
+            margin: 0 1.5%;
             height: 24em;
             position: relative;
-            display: flex;
-            align-items: flex-end;
-            padding: 2em;
-            border: 1px solid transparent;
-            border-image: linear-gradient(145deg, $secondaryColor, $lightColor);
-            border-image-slice: 1;
-            transition: 0.3s ease-out;
             @include screen('tablet') {
                 flex-basis: 45%;
                 margin: 0 auto 2em;
@@ -402,29 +507,53 @@ hr {
             @include screen('mobile') {
                 max-width: 300px;
                 flex-basis: 80%;
+                height: 20em;
                 margin: 0 auto 1em;
                 background-color: rgba(0, 0, 0, 0.15);
             }
-
-            &:hover,
-            &:focus {
-                transform: translateY(-10px);
-                background-color: rgba(0, 0, 0, 0.25);
-            }
-
-            img {
+            a {
                 position: absolute;
-                width: 90px;
-                top: 2em;
-                left: 2em;
-            }
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                display: flex;
+                align-items: flex-end;
+                padding: 2em;
+                border: 1px solid transparent;
+                border-image: linear-gradient(145deg, $secondaryColor, $lightColor);
+                border-image-slice: 1;
+                transition: 0.3s ease-out;
+                background-color: rgba(0, 0, 0, 0.1);
+                &:hover,
+                &:focus {
+                    transform: translateY(-10px);
+                    background-color: rgba(0, 0, 0, 0.25);
+                    @include screen('mobile') {
+                        transform: none;
+                    }
+                }
 
-            span {
-                color: #fff;
-                font-size: 2em;
-                line-height: 1.35em;
-                text-align: left;
-                display: block;
+                img {
+                    position: absolute;
+                    width: 90px;
+                    top: 2em;
+                    left: 2em;
+                }
+
+                span {
+                    color: #fff;
+                    font-size: 2em;
+                    line-height: 1.35em;
+                    text-align: left;
+                    display: block;
+                    @include screen('tablet') {
+                        font-size: 1.5em;
+                        br {
+                            display: none;
+                        }
+                    }
+                }
             }
         }
     }
@@ -433,7 +562,7 @@ hr {
 .key_features {
     position: relative;
     .container {
-        padding-top: 10em;
+        padding-top: 5em;
 
         &:before {
             position: absolute;
@@ -451,7 +580,7 @@ hr {
 
         &:after {
             position: absolute;
-            content: 'Features';
+            content: 'Key Features';
             color: #c6c6c6;
             top: 0.4em;
             left: 6.5em;
@@ -466,9 +595,10 @@ hr {
         .item {
             display: flex;
             align-items: stretch;
-            margin: 0 0 2em;
-            outline: 1px solid red;
-
+            margin: 0 0 3em;
+            @include screen('mobile') {
+                flex-flow: row wrap;
+            }
             .pic {
                 flex-grow: 0;
                 flex-shrink: 1;
@@ -476,6 +606,10 @@ hr {
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                @include screen('mobile') {
+                    flex-basis: 100%;
+                    margin-bottom: 4em;
+                }
             }
 
             .item_content {
@@ -483,11 +617,29 @@ hr {
                 flex-shrink: 1;
                 flex-basis: 40%;
                 text-align: left;
+                @include screen('mobile') {
+                    flex-basis: 100%;
+                }
 
                 h3 {
                     font-size: 2.5em;
                     color: #fff;
-                    margin: 0 0 1em;
+                    margin: 0 0 0.5em;
+                    display: block;
+                    color: $secondaryColor;
+                    @include screen('mobile') {
+                        font-size: 2em;
+                        text-align: center;
+                        margin: 0 auto 0.5em;
+                    }
+                }
+                p {
+                    @include screen('tablet') {
+                        font-size: 1em;
+                        max-width: 90%;
+                        margin: 0 auto 1em;
+                        text-align: center;
+                    }
                 }
             }
         }
@@ -496,6 +648,9 @@ hr {
 
 .domain_wall {
     padding-top: 0 !important;
+    @include screen('mobile') {
+        padding-bottom: 0 !important;
+    }
 
     .container {
         padding: 0;
@@ -543,7 +698,7 @@ hr {
         margin: 0 auto 3em;
         position: relative;
         z-index: 2;
-        @media screen and (max-width: 1360px) {
+        @media screen and (max-width: 1440px) {
             max-width: 1000px;
         }
 
@@ -561,9 +716,9 @@ hr {
         }
         .ba-slider {
             position: absolute;
-            width: 95%;
+            width: 94%;
             height: 98%;
-            left: 2.5%;
+            left: 3%;
             top: 2%;
             z-index: 1;
         }
@@ -594,6 +749,9 @@ hr {
             background-color: $lightColor;
             top: 0.5em;
             left: 3em;
+            @include screen('mobile') {
+                left: 1em;
+            }
         }
 
         &:after {
@@ -605,9 +763,11 @@ hr {
             font-size: 0.75rem;
             height: 1em;
             line-height: 1em;
+            @include screen('mobile') {
+                left: 3.5em;
+            }
         }
         .sample_page_content {
-            outline: 1px solid red;
             display: flex;
             align-content: top;
             justify-content: flex-start;
@@ -632,6 +792,27 @@ hr {
                     img {
                         width: 100%;
                     }
+                }
+            }
+        }
+        .btn_grp {
+            a {
+                margin: 0 auto;
+                color: $primaryColor;
+                min-width: 12em;
+                font-size: 1.35em;
+                text-align: center;
+                justify-content: center;
+                background-color: $secondaryColor;
+
+                &:hover,
+                &:focus {
+                    background-color: $lightColor;
+                }
+                @include screen('xs_mobile') {
+                    width: 80%;
+                    font-size: 1.125em;
+                    margin: 0 auto 1em 0;
                 }
             }
         }
