@@ -452,7 +452,7 @@ hr {
                 text-align: left;
                 max-width: 660px;
                 @include screen('tablet') {
-                    font-size: 1em;
+                    font-size: 0.938em;
                     max-width: 90%;
                 }
             }
@@ -655,6 +655,9 @@ hr {
                         margin: 0 auto 1em;
                         text-align: center;
                     }
+                    @include screen('mobile') {
+                        font-size: 0.938em;
+                    }
                 }
             }
         }
@@ -748,7 +751,7 @@ hr {
             margin: 0 auto;
             display: block;
             @include screen('mobile') {
-                font-size: 1em;
+                font-size: 0.938em;
             }
         }
     }
