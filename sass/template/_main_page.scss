@@ -282,10 +282,12 @@ hr {
         h2 {
             text-align: left;
             background: rgb(0, 205, 255);
-            background: linear-gradient(145deg,
-                    rgba(0, 205, 255, 1) 20%,
-                    rgb(11, 105, 173) 50%,
-                    rgba(87, 255, 190, 1) 80%);
+            background: linear-gradient(
+                145deg,
+                rgba(0, 205, 255, 1) 20%,
+                rgb(11, 105, 173) 50%,
+                rgba(87, 255, 190, 1) 80%
+            );
             background-size: 150%;
             font-size: 5em;
             line-height: 1.125em;
@@ -308,10 +310,12 @@ hr {
 
             @include screen('xs_mobile') {
                 font-size: 3em;
-                background: linear-gradient(145deg,
-                        rgba(0, 205, 255, 1) 20%,
-                        rgb(22, 138, 221) 50%,
-                        rgba(87, 255, 190, 1) 80%);
+                background: linear-gradient(
+                    145deg,
+                    rgba(0, 205, 255, 1) 20%,
+                    rgb(22, 138, 221) 50%,
+                    rgba(87, 255, 190, 1) 80%
+                );
                 color: transparent;
                 background-clip: text;
                 margin: 0 0 1em;
@@ -797,7 +801,7 @@ hr {
         content: '';
         width: 100%;
         height: 50%;
-        background: #1c2852;
+        background: #0b1628;
         left: 0;
         top: 0;
         z-index: 1;
@@ -839,7 +843,7 @@ hr {
     }
 
     h2.title {
-        &+p {
+        & + p {
             max-width: 720px;
             margin: 0 auto;
             display: block;
