@@ -1,4 +1,30 @@
 $(function () {
+    var submenuLength = $('.sidebar').find('.submenu').length;
+    if (submenuLength > 0) {
+        $('.submenu').each(function () {
+            $(this).siblings('a').addClass('has_child');
+        });
+    }
+    $('.header')
+        .find('nav>ul>li')
+        .hover(
+            function () {
+                $(this).children('.submenu').stop(true, true).delay(200).slideDown();
+            },
+            function () {
+                $(this).children('.submenu').stop(true, true).slideUp();
+            }
+        );
+
+    $('.sidebar')
+        .find('nav ul li')
+        .off()
+        .click(function () {
+            $(this).children('.submenu').stop().slideToggle('easeOutQuint');
+            $(this).children('a').stop().toggleClass('already_open');
+        });
+
+    //
     $('.tab ul li').each(function () {
         $(this)
             .find('a')
@@ -522,36 +548,6 @@ $(function () {
             sidebar.stop().removeClass('menu-opened');
             e.preventDefault();
         });
-    // 職缺搜尋
-    $('select[multiple].active.conditionSelect').multiselect({
-        columns: 2,
-        placeholder: '職缺類別',
-        search: false,
-        searchOptions: {
-            default: '搜尋',
-        },
-        selectAll: true,
-    });
-
-    $('select[multiple].active.regionSelect').multiselect({
-        columns: 2,
-        placeholder: '工作地點',
-        search: false,
-        searchOptions: {
-            default: '搜尋',
-        },
-        selectAll: true,
-    });
-    $('<span class="heading">RD</span>').insertBefore('#ms-list-1 ul li[data-search-term="製程開發"]');
-    $('<span class="heading">BU</span>').insertBefore('#ms-list-1 ul li[data-search-term="業務"]');
-    $('<span class="heading">IU</span>').insertBefore('#ms-list-1 ul li[data-search-term="人力資源管理"]');
-    $('<span class="heading">CIM/IT</span>').insertBefore('#ms-list-1 ul li[data-search-term="資訊工程"]');
-    $('<span class="heading">OU</span>').insertBefore('#ms-list-1 ul li[data-search-term="製程設備"]');
-    $('<span class="heading">SCM</span>').insertBefore('#ms-list-1 ul li[data-search-term="運籌管理"]');
-    $('<span class="heading">Technician</span>').insertBefore('#ms-list-1 ul li[data-search-term="技術員"]');
-    $('<span class="heading">Technologist</span>').insertBefore('#ms-list-1 ul li[data-search-term="設備技師"]');
-    $('<span class="heading">Other</span>').insertBefore('#ms-list-1 ul li[data-search-term="其他"]');
-    $('<span class="heading">SDM</span>').insertBefore('#ms-list-1 ul li[data-search-term="產品開發"]');
 });
 $(document).ready(function () {
     // 在網頁載入時或進入 viewport 時觸發程式碼
@@ -572,93 +568,57 @@ $(document).ready(function () {
         })
         .trigger('scroll'); // 這裡觸發一次 scroll 事件，確保一開始就檢查元素是否在視窗內
     //
-    $('.goto_expo')
+    $('.q_link01')
         .off()
         .click(function (e) {
             $('html, body')
                 .stop(true, true)
-                .animate({ scrollTop: $('.event_expo').offset().top - 50 }, 800, 'easeOutExpo');
-            sidebar.stop().removeClass('menu-opened');
+                .animate({ scrollTop: $('#anchor_01').offset().top - 150 }, 800, 'easeOutExpo');
             $(this).blur();
             e.preventDefault();
         });
-    $('.goto_seminar')
+    $('.q_link02')
         .off()
         .click(function (e) {
             $('html, body')
                 .stop(true, true)
-                .animate({ scrollTop: $('.event_seminar').offset().top - 50 }, 800, 'easeOutExpo');
-            sidebar.stop().removeClass('menu-opened');
+                .animate({ scrollTop: $('#anchor_02').offset().top - 50 }, 800, 'easeOutExpo');
             $(this).blur();
             e.preventDefault();
         });
-    $('.goto_pre_offer')
+    $('.q_link03')
         .off()
         .click(function (e) {
             $('html, body')
                 .stop(true, true)
-                .animate({ scrollTop: $('.event_pre_offer').offset().top - 50 }, 800, 'easeOutExpo');
-            sidebar.stop().removeClass('menu-opened');
+                .animate({ scrollTop: $('#anchor_03').offset().top - 50 }, 800, 'easeOutExpo');
             $(this).blur();
             e.preventDefault();
         });
-    $('.goto_event_feature')
+    $('.q_link04')
         .off()
         .click(function (e) {
             $('html, body')
                 .stop(true, true)
-                .animate({ scrollTop: $('.event_feature').offset().top - 50 }, 800, 'easeOutExpo');
-            sidebar.stop().removeClass('menu-opened');
+                .animate({ scrollTop: $('#anchor_04').offset().top - 50 }, 800, 'easeOutExpo');
             $(this).blur();
             e.preventDefault();
         });
-    $('.goto_event_application')
+    $('.q_link05')
         .off()
         .click(function (e) {
             $('html, body')
                 .stop(true, true)
-                .animate({ scrollTop: $('.event_application').offset().top - 50 }, 800, 'easeOutExpo');
-            sidebar.stop().removeClass('menu-opened');
+                .animate({ scrollTop: $('#anchor_05').offset().top - 50 }, 800, 'easeOutExpo');
             $(this).blur();
             e.preventDefault();
         });
-    $('.goto_event_senior')
+    $('.q_link06')
         .off()
         .click(function (e) {
             $('html, body')
                 .stop(true, true)
-                .animate({ scrollTop: $('.event_senior').offset().top - 50 }, 800, 'easeOutExpo');
-            sidebar.stop().removeClass('menu-opened');
-            $(this).blur();
-            e.preventDefault();
-        });
-    $('.goto_event_golf')
-        .off()
-        .click(function (e) {
-            $('html, body')
-                .stop(true, true)
-                .animate({ scrollTop: $('.event_golf').offset().top - 50 }, 800, 'easeOutExpo');
-            sidebar.stop().removeClass('menu-opened');
-            $(this).blur();
-            e.preventDefault();
-        });
-    $('.goto_event_golf')
-        .off()
-        .click(function (e) {
-            $('html, body')
-                .stop(true, true)
-                .animate({ scrollTop: $('.event_golf').offset().top - 50 }, 800, 'easeOutExpo');
-            sidebar.stop().removeClass('menu-opened');
-            $(this).blur();
-            e.preventDefault();
-        });
-    $('.goto_faq')
-        .off()
-        .click(function (e) {
-            $('html, body')
-                .stop(true, true)
-                .animate({ scrollTop: $('.event_faq').offset().top - 50 }, 800, 'easeOutExpo');
-            sidebar.stop().removeClass('menu-opened');
+                .animate({ scrollTop: $('#anchor_06').offset().top - 50 }, 800, 'easeOutExpo');
             $(this).blur();
             e.preventDefault();
         });

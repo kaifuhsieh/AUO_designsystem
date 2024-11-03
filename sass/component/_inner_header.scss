@@ -1,5 +1,5 @@
 .header {
-    height: 100px;
+    height: 80px;
     z-index: 99;
     position: fixed;
     transform: translate3d(0, 0, 0);
@@ -7,9 +7,19 @@
     top: 0;
     left: 0;
     transition: 0.3s $cubic;
-
-    @include screen('mobile') {
-        height: 60px;
+    background-color: $primaryColor;
+    &:after {
+        position: absolute;
+        content: '';
+        background-color: $primaryColor;
+        width: 100%;
+        height: 80px;
+        top: 0px;
+        z-index: 2;
+        transition: 0.3s ease-out;
+        @include screen('tablet') {
+            height: 60px;
+        }
     }
 
     @include screen('tablet') {
@@ -29,7 +39,8 @@
         align-items: center;
         padding: 0 2em;
         position: relative;
-        height: 100px;
+        z-index: 3;
+        height: 80px;
         transition: 0.3s ease-out;
         align-content: center;
         align-items: stretch;
@@ -101,7 +112,7 @@
             flex-grow: 0;
             flex-shrink: 1;
             flex-basis: auto;
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: normal;
             align-self: center;
             white-space: nowrap;
@@ -467,14 +478,20 @@
 
     // header fix
     &.fixed {
+        &:before {
+            height: 60px;
+        }
+        &:after {
+            height: 60px;
+        }
         @include screen('mobile') {
-            background: rgba(0, 0, 0, 0.35);
+            background-color: $primaryColor;
             backdrop-filter: blur(30px);
             -webkit-backdrop-filter: blur(15px);
         }
 
         @media screen and (min-width: 768px) {
-            background: rgba(0, 0, 0, 0.35);
+            background-color: $primaryColor;
             backdrop-filter: blur(30px);
             -webkit-backdrop-filter: blur(15px);
             z-index: 999;
@@ -493,10 +510,6 @@
                         background: $primaryColor;
                     }
                 }
-            }
-
-            &:before {
-                background: #fff;
             }
 
             .search_button,
@@ -622,7 +635,10 @@ $menuItems: 7;
 
         ul {
             list-style: none;
-            padding: 0;
+            padding: 0 0 1em;
+            & ~ ul {
+                border: none;
+            }
 
             li {
                 transform: scale(1.15) translateY(-30px);
@@ -675,7 +691,7 @@ $menuItems: 7;
                 ul {
                     padding-left: 1.4em;
                     display: none;
-
+                    border: none;
                     a {
                         font-size: 1.125rem;
                         padding: 0.5em 0.25em;
@@ -706,7 +722,6 @@ $menuItems: 7;
         transition-delay: 0.25s;
         left: 0;
         pointer-events: auto;
-
         nav {
             transform: translateX(0px);
         }

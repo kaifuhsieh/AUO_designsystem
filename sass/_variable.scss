@@ -29,8 +29,8 @@ $color-word: #005087; //一般字的顏色
 // dashboard
 $dashboard_bg: #f1f1f1;
 // 連結顏色
-$aColor: $secondaryColor;
-$aHover: lighten($secondaryColor, 10);
+$aColor: #21baff;
+$aHover: darken(#21baff, 10);
 
 // 表單focus顏色
 $form-focus: $linkColor; //表單
