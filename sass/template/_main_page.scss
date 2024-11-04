@@ -282,10 +282,12 @@ hr {
         h2 {
             text-align: left;
             background: rgb(0, 205, 255);
-            background: linear-gradient(145deg,
-                    rgba(0, 205, 255, 1) 20%,
-                    rgb(11, 105, 173) 50%,
-                    rgba(87, 255, 190, 1) 80%);
+            background: linear-gradient(
+                145deg,
+                rgba(0, 205, 255, 1) 20%,
+                rgb(11, 105, 173) 50%,
+                rgba(87, 255, 190, 1) 80%
+            );
             background-size: 150%;
             color: transparent;
             background-clip: text;
@@ -310,10 +312,12 @@ hr {
 
             @include screen('xs_mobile') {
                 font-size: 3em;
-                background: linear-gradient(145deg,
-                        rgba(0, 205, 255, 1) 20%,
-                        rgb(22, 138, 221) 50%,
-                        rgba(87, 255, 190, 1) 80%);
+                background: linear-gradient(
+                    145deg,
+                    rgba(0, 205, 255, 1) 20%,
+                    rgb(22, 138, 221) 50%,
+                    rgba(87, 255, 190, 1) 80%
+                );
                 color: transparent;
                 background-clip: text;
                 margin: 0 0 1em;
@@ -485,10 +489,12 @@ hr {
             h2.title {
                 margin-bottom: 3em;
                 background: rgb(0, 205, 255);
-                background: linear-gradient(145deg,
-                        rgba(0, 205, 255, 1) 20%,
-                        rgb(11, 105, 173) 50%,
-                        rgba(87, 255, 190, 1) 80%);
+                background: linear-gradient(
+                    145deg,
+                    rgba(0, 205, 255, 1) 20%,
+                    rgb(11, 105, 173) 50%,
+                    rgba(87, 255, 190, 1) 80%
+                );
                 background-size: 150%;
                 color: transparent;
                 background-clip: text;
@@ -735,10 +741,12 @@ hr {
                     margin: 0 0 0.5em;
                     display: inline-block;
                     background: rgb(0, 205, 255);
-                    background: linear-gradient(145deg,
-                            rgba(0, 205, 255, 1) 20%,
-                            rgb(11, 105, 173) 60%,
-                            rgba(87, 255, 190, 1) 10%);
+                    background: linear-gradient(
+                        145deg,
+                        rgba(0, 205, 255, 1) 20%,
+                        rgb(11, 105, 173) 60%,
+                        rgba(87, 255, 190, 1) 100%
+                    );
                     background-size: 150%;
                     color: transparent;
                     background-clip: text;
@@ -867,7 +875,7 @@ hr {
     }
 
     h2.title {
-        &+p {
+        & + p {
             max-width: 720px;
             margin: 0 auto;
             display: block;
@@ -978,7 +986,7 @@ hr {
 
 .inner_title {
     padding-top: 8em;
-    color: #FFF;
+    color: #fff;
     min-height: 10em;
     position: relative;
     margin-bottom: 8em;
@@ -990,7 +998,7 @@ hr {
 
     &:after {
         position: absolute;
-        content: "";
+        content: '';
         width: 720px;
         aspect-ratio: 5/3;
         left: 50%;
@@ -1010,12 +1018,12 @@ hr {
     }
 
     small {
-        color: rgba(255, 255, 255, .75);
+        color: rgba(255, 255, 255, 0.75);
     }
 
     h2 {
         font-size: 4em;
-        color: #FFF;
+        color: #fff;
         text-align: left;
         line-height: 1.35em;
 
@@ -1052,7 +1060,7 @@ hr {
             flex-grow: 0;
             flex-shrink: 0;
             flex-basis: 400px;
-            border-top: 1px solid rgba(255, 255, 255, .5);
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
             margin-right: 2em;
             text-align: left;
 
@@ -1064,19 +1072,20 @@ hr {
             }
 
             h3 {
-
                 font-size: 3em;
-                color: #FFF;
+                color: #fff;
                 text-align: left;
                 margin: 0;
                 font-weight: normal;
                 line-height: 1.45em;
                 padding-top: 3rem;
                 background: rgb(0, 205, 255);
-                background: linear-gradient(145deg,
-                        rgba(0, 205, 255, 1) 0%,
-                        rgb(57, 161, 235) 60%,
-                        rgba(87, 255, 190, 1) 80%);
+                background: linear-gradient(
+                    145deg,
+                    rgba(0, 205, 255, 1) 0%,
+                    rgb(57, 161, 235) 60%,
+                    rgba(87, 255, 190, 1) 80%
+                );
                 background-size: 150%;
                 color: transparent;
                 background-clip: text;
@@ -1091,10 +1100,12 @@ hr {
 
                     padding: 2em 0;
                     background: rgb(0, 205, 255);
-                    background: linear-gradient(145deg,
-                            rgba(0, 205, 255, 1) 0%,
-                            rgb(57, 161, 235) 60%,
-                            rgba(87, 255, 190, 1) 80%);
+                    background: linear-gradient(
+                        145deg,
+                        rgba(0, 205, 255, 1) 0%,
+                        rgb(57, 161, 235) 60%,
+                        rgba(87, 255, 190, 1) 80%
+                    );
                     background-size: 150%;
                     color: transparent;
                     background-clip: text;
@@ -1105,28 +1116,26 @@ hr {
                     display: block;
                     font-size: 1rem;
                     font-weight: normal;
-                    color: rgba(255, 255, 255, .75);
+                    color: rgba(255, 255, 255, 0.75);
                 }
             }
         }
-
-
 
         .inner_info_content {
             flex-grow: 1;
             flex-shrink: 1;
             flex-basis: auto;
-            border-top: 1px solid rgba(255, 255, 255, .5);
-            color: #FFF;
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            color: #fff;
             text-align: left;
             padding-top: 3rem;
 
             h4 {
                 line-height: 1.45em;
-                color: #FFF;
+                color: #fff;
                 font-size: 1.75rem;
                 text-align: left;
-                margin: 0 0 .5em;
+                margin: 0 0 0.5em;
                 font-weight: normal;
 
                 @include screen('tablet') {
@@ -1138,9 +1147,7 @@ hr {
                     font-size: 1em;
                     font-weight: normal;
                     line-height: 1.35em;
-                    color: rgba(255, 255, 255, .5);
-
-
+                    color: rgba(255, 255, 255, 0.5);
                 }
             }
 
@@ -1156,8 +1163,6 @@ hr {
                 display: flex;
                 flex-flow: row wrap;
 
-
-
                 .item {
                     flex-grow: 0;
                     flex-shrink: 1;
@@ -1172,8 +1177,6 @@ hr {
                         min-width: 320px;
                         padding-right: 0;
                     }
-
-
 
                     .img-container {
                         width: 200px;
@@ -1209,7 +1212,7 @@ hr {
                         li {
                             text-align: left;
                             line-height: 1.45em;
-                            margin-bottom: .5em;
+                            margin-bottom: 0.5em;
                         }
                     }
                 }
