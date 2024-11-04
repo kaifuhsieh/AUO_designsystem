@@ -282,22 +282,20 @@ hr {
         h2 {
             text-align: left;
             background: rgb(0, 205, 255);
-            background: linear-gradient(
-                145deg,
-                rgba(0, 205, 255, 1) 20%,
-                rgb(11, 105, 173) 50%,
-                rgba(87, 255, 190, 1) 80%
-            );
+            background: linear-gradient(145deg,
+                    rgba(0, 205, 255, 1) 20%,
+                    rgb(11, 105, 173) 50%,
+                    rgba(87, 255, 190, 1) 80%);
             background-size: 150%;
+            color: transparent;
+            background-clip: text;
             font-size: 5em;
             line-height: 1.125em;
             font-weight: bold;
-            color: transparent;
-            background-clip: text;
-            margin: 0 0 1em;
             text-fill-color: transparent;
             background-position: 100% center;
             animation: h2_animation 5s ease-in-out infinite;
+            margin: 0 0 1em;
             max-width: 600px;
 
             @media screen and (min-width: 1480px) {
@@ -310,12 +308,10 @@ hr {
 
             @include screen('xs_mobile') {
                 font-size: 3em;
-                background: linear-gradient(
-                    145deg,
-                    rgba(0, 205, 255, 1) 20%,
-                    rgb(22, 138, 221) 50%,
-                    rgba(87, 255, 190, 1) 80%
-                );
+                background: linear-gradient(145deg,
+                        rgba(0, 205, 255, 1) 20%,
+                        rgb(22, 138, 221) 50%,
+                        rgba(87, 255, 190, 1) 80%);
                 color: transparent;
                 background-clip: text;
                 margin: 0 0 1em;
@@ -486,6 +482,18 @@ hr {
 
             h2.title {
                 margin-bottom: 3em;
+                background: rgb(0, 205, 255);
+                background: linear-gradient(145deg,
+                        rgba(0, 205, 255, 1) 20%,
+                        rgb(22, 138, 221) 50%,
+                        rgba(87, 255, 190, 1) 80%);
+                background-size: 150%;
+                color: transparent;
+                background-clip: text;
+                line-height: 1.125em;
+                font-weight: bold;
+                text-fill-color: transparent;
+                animation: h2_animation 5s ease-in-out infinite;
 
                 @include screen('tablet') {
                     margin-bottom: 0;
@@ -724,7 +732,18 @@ hr {
                     color: #fff;
                     margin: 0 0 0.5em;
                     display: block;
-                    color: $secondaryColor;
+                    background: rgb(0, 205, 255);
+                    background: linear-gradient(145deg,
+                            rgba(0, 205, 255, 1) 30%,
+                            rgb(22, 138, 221) 50%,
+                            rgba(87, 255, 190, 1) 70%);
+                    background-size: 150%;
+                    color: transparent;
+                    background-clip: text;
+                    line-height: 1.125em;
+                    font-weight: bold;
+                    text-fill-color: transparent;
+                    animation: h2_animation 5s ease-in-out infinite;
 
                     @include screen('mobile') {
                         font-size: 1.75em;
@@ -843,7 +862,7 @@ hr {
     }
 
     h2.title {
-        & + p {
+        &+p {
             max-width: 720px;
             margin: 0 auto;
             display: block;
@@ -946,6 +965,130 @@ hr {
                     width: 80%;
                     font-size: 1.125em;
                     margin: 0 auto 1em;
+                }
+            }
+        }
+    }
+}
+
+.inner_title {
+    padding-top: 8em;
+    color: #FFF;
+    position: relative;
+    margin-bottom: 8em;
+
+    &:after {
+        position: absolute;
+        content: "";
+        width: 34%;
+        height: 320px;
+        right: 0;
+        top: 0;
+        background: url(../images/kv.svg) no-repeat left bottom;
+        background-size: 115%;
+        transform: scale(1);
+    }
+
+    small {
+        color: rgba(255, 255, 255, .75);
+    }
+
+    h2 {
+        font-size: 4em;
+        color: #FFF;
+        text-align: left;
+        line-height: 1.35em;
+
+        small {
+            display: block;
+            font-size: 1.125rem;
+            line-height: 1.45em;
+            font-weight: normal;
+            max-width: 760px;
+        }
+    }
+}
+
+.service_list {
+    margin-bottom: 12em;
+
+    .container {
+        display: flex;
+        justify-content: flex-start;
+
+        h3 {
+            flex-grow: 0;
+            flex-shrink: 0;
+            flex-basis: 400px;
+            font-size: 3em;
+            color: #FFF;
+            text-align: left;
+            margin: 0;
+            line-height: 1.35em;
+            padding-top: 3rem;
+            border-top: 1px solid #DDD;
+            margin-right: 1em;
+            background: rgb(0, 205, 255);
+            background: linear-gradient(145deg,
+                    rgba(0, 205, 255, 1) 40%,
+                    rgba(87, 255, 190, 1) 80%);
+            background-size: 150%;
+            color: transparent;
+            background-clip: text;
+            line-height: 1.125em;
+            font-weight: bold;
+            text-fill-color: transparent;
+            background-position: 100% center;
+            animation: h2_animation 5s ease-in-out infinite;
+
+            small {
+                display: block;
+                font-size: 1rem;
+                font-weight: normal;
+                color: rgba(255, 255, 255, .75);
+            }
+        }
+
+        .service_content {
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: auto;
+            display: flex;
+            flex-flow: row wrap;
+            border-top: 1px solid #DDD;
+
+            .item {
+                flex-grow: 0;
+                flex-shrink: 1;
+                flex-basis: 50%;
+                padding-top: 3rem;
+
+                h4 {
+                    line-height: 1.45em;
+                    color: #FFF;
+                    font-size: 1.5rem;
+                    text-align: left;
+                    margin: 0 0 .5em;
+
+                    .num {
+                        display: block;
+                        font-size: 1em;
+                        font-weight: normal;
+                        line-height: 1.35em;
+                        color: rgba(255, 255, 255, .75);
+                    }
+                }
+
+                ul {
+                    padding-left: 0;
+                    margin: 0;
+                    padding-left: 1em;
+
+                    li {
+                        text-align: left;
+                        line-height: 1.45em;
+                        margin-bottom: .5em;
+                    }
                 }
             }
         }
