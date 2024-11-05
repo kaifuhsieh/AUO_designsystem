@@ -282,12 +282,10 @@ hr {
         h2 {
             text-align: left;
             background: rgb(0, 205, 255);
-            background: linear-gradient(
-                145deg,
-                rgba(0, 205, 255, 1) 20%,
-                rgb(11, 105, 173) 50%,
-                rgba(87, 255, 190, 1) 80%
-            );
+            background: linear-gradient(145deg,
+                    rgba(0, 205, 255, 1) 20%,
+                    rgb(11, 105, 173) 50%,
+                    rgba(87, 255, 190, 1) 80%);
             background-size: 150%;
             color: transparent;
             background-clip: text;
@@ -312,12 +310,10 @@ hr {
 
             @include screen('xs_mobile') {
                 font-size: 3em;
-                background: linear-gradient(
-                    145deg,
-                    rgba(0, 205, 255, 1) 20%,
-                    rgb(22, 138, 221) 50%,
-                    rgba(87, 255, 190, 1) 80%
-                );
+                background: linear-gradient(145deg,
+                        rgba(0, 205, 255, 1) 20%,
+                        rgb(22, 138, 221) 50%,
+                        rgba(87, 255, 190, 1) 80%);
                 color: transparent;
                 background-clip: text;
                 margin: 0 0 1em;
@@ -489,12 +485,10 @@ hr {
             h2.title {
                 margin-bottom: 3em;
                 background: rgb(0, 205, 255);
-                background: linear-gradient(
-                    145deg,
-                    rgba(0, 205, 255, 1) 20%,
-                    rgb(11, 105, 173) 50%,
-                    rgba(87, 255, 190, 1) 80%
-                );
+                background: linear-gradient(145deg,
+                        rgba(0, 205, 255, 1) 20%,
+                        rgb(11, 105, 173) 50%,
+                        rgba(87, 255, 190, 1) 80%);
                 background-size: 150%;
                 color: transparent;
                 background-clip: text;
@@ -672,6 +666,7 @@ hr {
 
     .container {
         padding-top: 5em;
+
         &:before {
             position: absolute;
             content: '';
@@ -708,6 +703,7 @@ hr {
             margin: 0 0 3em;
             position: sticky;
             top: 20em;
+
             @include screen('mobile') {
                 flex-flow: row wrap;
             }
@@ -719,6 +715,7 @@ hr {
                 display: flex;
                 align-items: center;
                 justify-content: center;
+
                 @include screen('mobile') {
                     flex-basis: 100%;
                     margin-bottom: 4em;
@@ -741,12 +738,10 @@ hr {
                     margin: 0 0 0.5em;
                     display: inline-block;
                     background: rgb(0, 205, 255);
-                    background: linear-gradient(
-                        145deg,
-                        rgba(0, 205, 255, 1) 20%,
-                        rgb(11, 105, 173) 60%,
-                        rgba(87, 255, 190, 1) 100%
-                    );
+                    background: linear-gradient(145deg,
+                            rgba(0, 205, 255, 1) 20%,
+                            rgb(11, 105, 173) 60%,
+                            rgba(87, 255, 190, 1) 100%);
                     background-size: 150%;
                     color: transparent;
                     background-clip: text;
@@ -847,7 +842,7 @@ hr {
         position: relative;
         z-index: 2;
 
-        @media screen and (max-width: 1440px) {
+        @media screen and (max-width: 1520px) {
             max-width: 1000px;
         }
 
@@ -875,7 +870,7 @@ hr {
     }
 
     h2.title {
-        & + p {
+        &+p {
             max-width: 720px;
             margin: 0 auto;
             display: block;
@@ -1080,12 +1075,10 @@ hr {
                 line-height: 1.45em;
                 padding-top: 3rem;
                 background: rgb(0, 205, 255);
-                background: linear-gradient(
-                    145deg,
-                    rgba(0, 205, 255, 1) 0%,
-                    rgb(57, 161, 235) 60%,
-                    rgba(87, 255, 190, 1) 80%
-                );
+                background: linear-gradient(145deg,
+                        rgba(0, 205, 255, 1) 0%,
+                        rgb(57, 161, 235) 60%,
+                        rgba(87, 255, 190, 1) 80%);
                 background-size: 150%;
                 color: transparent;
                 background-clip: text;
@@ -1099,12 +1092,10 @@ hr {
 
                     padding: 2em 0;
                     background: rgb(0, 205, 255);
-                    background: linear-gradient(
-                        145deg,
-                        rgba(0, 205, 255, 1) 0%,
-                        rgb(57, 161, 235) 60%,
-                        rgba(87, 255, 190, 1) 80%
-                    );
+                    background: linear-gradient(145deg,
+                            rgba(0, 205, 255, 1) 0%,
+                            rgb(57, 161, 235) 60%,
+                            rgba(87, 255, 190, 1) 80%);
                     background-size: 150%;
                     color: transparent;
                     background-clip: text;
