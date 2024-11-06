@@ -30,7 +30,8 @@
         @include screen('tablet') {
             margin-top: 3em;
             // padding-top: 0;
-            padding: 0 1em;
+            padding: 0 1em 10em;
+            min-height: auto;
         }
 
         .left_sidebar {
@@ -197,7 +198,7 @@
                                 font-size: 1.5rem;
                             }
 
-                            &~h2 {
+                            & ~ h2 {
                                 padding-top: 2em;
                                 margin: 2rem 0px 1.5rem;
                                 border-top: 1px solid #ddd;
@@ -315,7 +316,6 @@
 
                             @include screen('mobile') {
                                 max-width: 100% !important;
-                                ;
                             }
                         }
                     }
