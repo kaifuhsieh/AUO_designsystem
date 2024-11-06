@@ -60,6 +60,9 @@ body {
 * {
     box-sizing: border-box;
 }
+.nolink {
+    pointer-events: none;
+}
 
 img {
     &.img_circle {

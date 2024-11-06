@@ -1,4 +1,13 @@
 $(function () {
+    // a[#]
+    $('a').click(function (e) {
+        if ($(this).attr('href') === '#') {
+            $(this).addClass('nolink');
+            e.preventDefault();
+        }
+    });
+
+    // submenu
     var submenuLength = $('.sidebar').find('.submenu').length;
     if (submenuLength > 0) {
         $('.submenu').each(function () {

@@ -1,11 +1,8 @@
 <ul class="submenu">
-    <li><a href="getting_started.html"><img src="images/icon_sidebar_start.svg" alt="">快速開始
-            Getting Started</a>
+    <li><a href="getting_started.html"><img src="images/icon_sidebar_start.svg" alt="">快速開始 Getting Started</a>
     </li>
-    <li><a href="overview.html"><img src="images/icon_sidebar_overview.svg" alt="">設計總覽
-            Overview</a></li>
-    <li><a href="foundation.html"><img src="images/icon_sidebar_foundation.svg" alt="">基礎
-            Foundations</a>
+    <li><a href="overview.html"><img src="images/icon_sidebar_overview.svg" alt="">設計總覽 Overview</a></li>
+    <li><a href="foundation.html"><img src="images/icon_sidebar_foundation.svg" alt="">基礎 Foundations</a>
         <ul class="submenu">
             <li><a href="border.html">Border</a></li>
             <li><a href="color.html">Color</a></li>
@@ -52,6 +49,13 @@
             <li><a href="toggle.html">Toggle / Switch</a></li>
             <li><a href="tooltip.html">Tooltip</a></li>
         </ul>
-    <li><a href="template.html"><img src="images/icon_sidebar_template.svg" alt="">範本
-            Template</a></li>
+    <li><a href="template.html"><img src="images/icon_sidebar_template.svg" alt="">範本 Template</a></li>
 </ul>
+<script>
+    $('a').click(function (e) {
+        if ($(this).attr('href') === '#') {
+            e.preventDefault();
+        }
+    });
+
+</script>
