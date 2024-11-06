@@ -282,10 +282,12 @@ hr {
         h2 {
             text-align: left;
             background: rgb(0, 205, 255);
-            background: linear-gradient(145deg,
-                    rgba(0, 205, 255, 1) 20%,
-                    rgb(11, 105, 173) 50%,
-                    rgba(87, 255, 190, 1) 80%);
+            background: linear-gradient(
+                145deg,
+                rgba(0, 205, 255, 1) 20%,
+                rgb(11, 105, 173) 50%,
+                rgba(87, 255, 190, 1) 80%
+            );
             background-size: 150%;
             color: transparent;
             background-clip: text;
@@ -310,10 +312,12 @@ hr {
 
             @include screen('xs_mobile') {
                 font-size: 3em;
-                background: linear-gradient(145deg,
-                        rgba(0, 205, 255, 1) 20%,
-                        rgb(22, 138, 221) 50%,
-                        rgba(87, 255, 190, 1) 80%);
+                background: linear-gradient(
+                    145deg,
+                    rgba(0, 205, 255, 1) 20%,
+                    rgb(22, 138, 221) 50%,
+                    rgba(87, 255, 190, 1) 80%
+                );
                 color: transparent;
                 background-clip: text;
                 margin: 0 0 1em;
@@ -485,10 +489,12 @@ hr {
             h2.title {
                 margin-bottom: 3em;
                 background: rgb(0, 205, 255);
-                background: linear-gradient(145deg,
-                        rgba(0, 205, 255, 1) 20%,
-                        rgb(11, 105, 173) 50%,
-                        rgba(87, 255, 190, 1) 80%);
+                background: linear-gradient(
+                    145deg,
+                    rgba(0, 205, 255, 1) 20%,
+                    rgb(11, 105, 173) 50%,
+                    rgba(87, 255, 190, 1) 80%
+                );
                 background-size: 150%;
                 color: transparent;
                 background-clip: text;
@@ -708,8 +714,6 @@ hr {
             padding: 0;
             background-color: $primaryColor;
 
-
-
             @include screen('mobile') {
                 flex-flow: row wrap;
             }
@@ -744,10 +748,12 @@ hr {
                     margin: 0 0 0.5em;
                     display: inline-block;
                     background: rgb(0, 205, 255);
-                    background: linear-gradient(145deg,
-                            rgba(0, 205, 255, 1) 20%,
-                            rgb(11, 105, 173) 60%,
-                            rgba(87, 255, 190, 1) 100%);
+                    background: linear-gradient(
+                        145deg,
+                        rgba(0, 205, 255, 1) 20%,
+                        rgb(11, 105, 173) 60%,
+                        rgba(87, 255, 190, 1) 100%
+                    );
                     background-size: 150%;
                     color: transparent;
                     background-clip: text;
@@ -876,7 +882,7 @@ hr {
     }
 
     h2.title {
-        &+p {
+        & + p {
             max-width: 720px;
             margin: 0 auto;
             display: block;
@@ -1081,10 +1087,12 @@ hr {
                 line-height: 1.45em;
                 padding-top: 3rem;
                 background: rgb(0, 205, 255);
-                background: linear-gradient(145deg,
-                        rgba(0, 205, 255, 1) 0%,
-                        rgb(57, 161, 235) 60%,
-                        rgba(87, 255, 190, 1) 80%);
+                background: linear-gradient(
+                    145deg,
+                    rgba(0, 205, 255, 1) 0%,
+                    rgb(57, 161, 235) 60%,
+                    rgba(87, 255, 190, 1) 80%
+                );
                 background-size: 150%;
                 color: transparent;
                 background-clip: text;
@@ -1098,10 +1106,12 @@ hr {
 
                     padding: 2em 0;
                     background: rgb(0, 205, 255);
-                    background: linear-gradient(145deg,
-                            rgba(0, 205, 255, 1) 0%,
-                            rgb(57, 161, 235) 60%,
-                            rgba(87, 255, 190, 1) 80%);
+                    background: linear-gradient(
+                        145deg,
+                        rgba(0, 205, 255, 1) 0%,
+                        rgb(57, 161, 235) 60%,
+                        rgba(87, 255, 190, 1) 80%
+                    );
                     background-size: 150%;
                     color: transparent;
                     background-clip: text;
