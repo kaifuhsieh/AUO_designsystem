@@ -97,8 +97,8 @@ a {
 }
 
 .wrapper {
-    overflow-x: hidden !important;
-    overflow-y: auto;
+    // overflow-x: hidden !important;
+    // overflow-y: auto;
 
     @include screen('tablet') {
         padding-top: 60px;

@@ -1,5 +1,6 @@
 .inner_page {
     position: relative;
+
     &:before {
         position: absolute;
         transform: translateZ(0);
@@ -11,6 +12,7 @@
         left: 0;
         top: -100px;
         transition: 0.3s ease-out;
+
         @include screen('tablet') {
             height: 70px;
         }
@@ -24,6 +26,7 @@
         padding: 0 2em;
         justify-content: flex-start;
         align-items: flex-start;
+
         @include screen('tablet') {
             margin-top: 3em;
             // padding-top: 0;
@@ -35,22 +38,28 @@
             flex-shrink: 0;
             flex-basis: 280px;
             will-change: min-height;
+
             @media screen and (max-width: 1200px) {
                 visibility: hidden;
                 min-width: 1px;
                 flex-basis: 1px;
             }
+
             .inner_menu {
                 padding-bottom: 5em;
-                transform: translate(0, 0); /* For browsers don't support translate3d. */
+                transform: translate(0, 0);
+                /* For browsers don't support translate3d. */
                 transform: translate3d(0, 0, 0);
                 will-change: position, transform;
             }
+
             ul {
                 margin: 0;
                 padding: 0;
+
                 li {
                     text-align: left;
+
                     a {
                         color: #333;
                         font-weight: bold;
@@ -59,10 +68,12 @@
                         padding: 0.5em 0.5em 0.5em 0em;
                         display: flex;
                         align-items: center;
+
                         &:hover,
                         &:focus {
                             color: $aHover;
                         }
+
                         img {
                             width: 1em;
                             height: 1em;
@@ -71,8 +82,10 @@
                         }
                     }
                 }
+
                 ul {
                     padding-left: 1.5em;
+
                     li {
                         a {
                             font-weight: normal;
@@ -80,6 +93,7 @@
                             font-size: 1rem;
                             padding: 0.25em 0.5em 0.25em 0em;
                             position: relative;
+
                             &:after {
                                 position: absolute;
                                 content: '';
@@ -94,9 +108,11 @@
                                 transform: rotate(45deg);
                                 transition: 0.3s ease-out;
                             }
+
                             &:hover,
                             &:focus {
                                 opacity: 1;
+
                                 &:after {
                                     left: -1em;
                                     opacity: 1;
@@ -117,9 +133,11 @@
             padding: 0 2em 10em;
             flex-flow: row wrap;
             justify-content: flex-start;
+
             @include screen('tablet') {
                 padding: 0 0em 5em;
             }
+
             .title {
                 flex-grow: 0;
                 flex-shrink: 1;
@@ -131,6 +149,7 @@
                 overflow: hidden;
                 display: flex;
                 align-items: center;
+
                 // &:before {
                 //     position: absolute;
                 //     content: '';
@@ -146,45 +165,55 @@
                     line-height: 1.45em;
                     font-weight: bold;
                     color: lighten($primaryColor, 10);
+
                     @include screen('mobile') {
                         font-size: 2rem;
                     }
                 }
             }
+
             .inner_container {
                 display: flex;
+
                 .ds_content {
                     text-align: left;
                     flex-grow: 1;
                     flex-shrink: 1;
                     flex-basis: auto;
                     padding-right: 5em;
+
                     @include screen('tablet') {
                         padding-right: 0;
                     }
+
                     .edit {
                         h2 {
                             font-size: 1.75rem;
                             line-height: 1.35em;
                             margin: 3rem 0px 1.5rem;
                             color: lighten($primaryColor, 20);
+
                             @include screen('mobile') {
                                 font-size: 1.5rem;
                             }
-                            & ~ h2 {
+
+                            &~h2 {
                                 padding-top: 2em;
                                 margin: 2rem 0px 1.5rem;
                                 border-top: 1px solid #ddd;
                             }
                         }
+
                         h3 {
                             font-size: 1.5rem;
                             line-height: 1.65em;
                             margin: 0px 0px 1rem;
                             color: #333;
+
                             @include screen('mobile') {
                                 font-size: 1.25rem;
                             }
+
                             span {
                                 color: lighten($primaryColor, 20);
                                 display: inline-block;
@@ -193,51 +222,63 @@
                                 margin-right: 0.5em;
                             }
                         }
+
                         h4 {
-                            font-size: 1.125rem;
+                            font-size: 1.25rem;
                             line-height: 1.65em;
                             margin: 0px 0px 1rem;
                             color: #333;
+
                             @include screen('mobile') {
                                 font-size: 1rem;
                             }
                         }
+
                         h5 {
                             font-size: 1.125rem;
                             line-height: 1.65em;
                             margin: 0px 0px 1rem;
                             color: #333;
+
                             @include screen('mobile') {
                                 font-size: 1rem;
                             }
                         }
+
                         p {
                             color: #555;
                             font-size: 1.125rem;
                             line-height: 1.65em;
                             margin: 0px 0px 1rem;
                             max-width: 50em;
+
                             @include screen('mobile') {
                                 font-size: 1rem;
                             }
                         }
+
                         hr {
                             margin: 2em 0;
                             display: block;
                         }
+
                         ul,
                         ol {
                             margin-bottom: 2em;
                             padding-left: 2em;
+                            max-width: 50em;
+
                             li {
                                 color: #555;
                                 font-size: 1.125rem;
                                 line-height: 1.75em;
                                 position: relative;
                                 list-style: none;
+
                                 @include screen('mobile') {
                                     font-size: 1rem;
                                 }
+
                                 &:before {
                                     position: absolute;
                                     content: '';
@@ -248,17 +289,38 @@
                                     left: -1em;
                                     top: 0.65em;
                                 }
+
+                                &::marker {
+                                    display: none;
+                                }
                             }
                         }
+
+                        ol {
+                            li {
+                                list-style: decimal;
+
+                                &:before {
+                                    display: none;
+                                }
+                            }
+                        }
+
                         img {
                             display: block;
                             max-width: 100%;
                             width: auto;
                             background: #aaa;
                             margin: 2em 0;
+
+                            @include screen('mobile') {
+                                max-width: 100% !important;
+                                ;
+                            }
                         }
                     }
                 }
+
                 .content_index {
                     flex-grow: 0;
                     flex-shrink: 0;
@@ -278,9 +340,11 @@
                         padding: 1em 1em 5em 1.5em;
                         margin: 0;
                         border-left: 1px solid #888;
-                        transform: translate(0, 0); /* For browsers don't support translate3d. */
+                        transform: translate(0, 0);
+                        /* For browsers don't support translate3d. */
                         transform: translate3d(0, 0, 0);
                         will-change: position, transform;
+
                         li {
                             a {
                                 font-size: 0.938rem;
@@ -289,6 +353,7 @@
                                 display: block;
                                 padding-left: 0.5em;
                                 margin-bottom: 0.5em;
+
                                 &:before {
                                     position: absolute;
                                     content: '';
@@ -299,6 +364,7 @@
                                     left: -0.25em;
                                     top: 0.65em;
                                 }
+
                                 &:hover,
                                 &:focus {
                                     cursor: pointer;

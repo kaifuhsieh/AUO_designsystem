@@ -666,6 +666,7 @@ hr {
 
     .container {
         padding-top: 5em;
+        padding-bottom: 5em;
 
         &:before {
             position: absolute;
@@ -699,10 +700,15 @@ hr {
 
         .item {
             display: flex;
-            align-items: stretch;
+            align-items: flex-start;
             margin: 0 0 3em;
+            height: 20em;
             position: sticky;
-            top: 20em;
+            top: 25%;
+            padding: 0;
+            background-color: $primaryColor;
+
+
 
             @include screen('mobile') {
                 flex-flow: row wrap;
