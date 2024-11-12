@@ -60,6 +60,7 @@ body {
 * {
     box-sizing: border-box;
 }
+
 .nolink {
     pointer-events: none;
 }
@@ -207,7 +208,7 @@ h2 {
             font-size: 2em;
         }
 
-        & + p {
+        &+p {
             display: block;
             margin: 1em 0;
             text-align: center;
@@ -251,6 +252,8 @@ table {
         width: 100%;
     }
 
+
+
     th,
     td {
         padding: 0.5em;
@@ -261,6 +264,14 @@ table {
     }
 
     td {
+        &.website_title {
+            width: 250px;
+        }
+
+        &.big_title {
+            width: 150px;
+        }
+
         border-bottom: #777 1px solid;
         word-break: break-all;
 
