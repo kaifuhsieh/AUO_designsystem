@@ -1075,6 +1075,10 @@ hr {
                 flex-basis: 300px;
             }
 
+            @include screen('mobile') {
+                flex-basis: 100%;
+            }
+
             h3 {
                 font-size: 3em;
                 color: #fff;
@@ -1131,7 +1135,7 @@ hr {
 
             h4 {
                 line-height: 1.45em;
-                color: #fff;
+                color: $secondaryColor;
                 font-size: 1.75rem;
                 text-align: left;
                 margin: 0 0 0.5em;
@@ -1146,8 +1150,8 @@ hr {
                     font-size: 1em;
                     font-weight: normal;
                     line-height: 1.35em;
-                    color: rgba(255, 255, 255, 0.5);
-                    margin-right: .5em;
+                    color: $secondaryColor;
+                    margin-right: .25em;
                 }
             }
 
@@ -1191,9 +1195,9 @@ hr {
                     }
 
                     .img-container {
-                        width: 200px;
-                        margin: 2em auto 0 0;
-                        aspect-ratio: 1/1;
+                        width: 80%;
+                        margin: 2em 10% 0;
+                        aspect-ratio: 16/9;
                         position: relative;
                         display: block;
 
@@ -1203,23 +1207,23 @@ hr {
 
                         img {
                             position: absolute;
-                            width: 200px;
-                            height: 200px;
-                            top: 50%;
-                            left: 50%;
-                            transform: translate(-50%, -50%);
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
 
-                            @include screen('tablet') {
-                                width: 160px;
-                                height: 160px;
-                            }
+
+
                         }
                     }
 
                     ul {
                         padding-left: 0;
-                        margin: 0;
-                        padding-left: 1em;
+                        margin: 0 0 0 1em;
+                        padding-left: 1.75em;
+
+                        @include screen('mobile') {
+                            padding-left: 1.5em;
+                        }
 
                         li {
                             text-align: left;
@@ -1248,20 +1252,18 @@ hr {
 .download_link {
     position: relative;
 
-
     .container {
-
-
         .download_content {
             display: flex;
             justify-content: flex-start;
             flex-flow: row nowrap;
             border-top: 1px solid rgba(255, 255, 255, .5);
-            padding: 3em 0em;
+            padding: 5em 0em 3em;
 
             @include screen('mobile') {
                 flex-flow: row wrap;
                 justify-content: center;
+                padding: 2em 0;
             }
         }
 
@@ -1282,7 +1284,7 @@ hr {
             @include screen('mobile') {
                 max-width: 300px;
                 flex-basis: 80%;
-                height: 20em;
+                height: 10em;
                 margin-left: 1em;
                 margin-right: 1em;
                 background-color: rgba(0, 0, 0, 0.15);
@@ -1336,6 +1338,12 @@ hr {
                     width: 180px;
                     top: 2em;
                     left: 2em;
+
+                    @include screen('mobile') {
+                        width: 150px;
+                        top: 1em;
+                        left: 1em;
+                    }
                 }
 
                 h3 {
@@ -1359,6 +1367,11 @@ hr {
                         br {
                             display: none;
                         }
+                    }
+
+                    @include screen('mobile') {
+                        font-size: 1.25em;
+                        font-weight: normal;
                     }
                 }
 
@@ -1463,7 +1476,6 @@ hr {
         flex-flow: row wrap;
         align-items: flex-start;
         align-content: flex-start;
-        padding-left: 1em;
         padding-bottom: 5em;
 
 
@@ -1471,20 +1483,27 @@ hr {
             flex-basis: 100%;
         }
 
+        .resource_info {
+            display: flex;
+            flex-flow: row wrap;
+            align-items: flex-start;
+            align-content: flex-start;
+        }
+
         h4 {
-            font-size: 1.5em;
+            font-size: 1.75em;
             font-weight: normal;
             flex-grow: 0;
             flex-shrink: 1;
-            flex-basis: 200px;
-            margin: 0 0 1em;
+            flex-basis: 260px;
+            margin: .25em 0 1em;
             color: $secondaryColor;
         }
 
         ol {
             flex-grow: 1;
             flex-shrink: 1;
-            flex-basis: 70%;
+            flex-basis: 60%;
             display: flex;
             flex-flow: row wrap;
             margin: 0 0 3em;
