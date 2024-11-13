@@ -1046,7 +1046,6 @@ hr {
 
 .inner_list {
     margin-bottom: 8em;
-    height: 300em;
 
     .container {
         display: flex;
@@ -1067,11 +1066,8 @@ hr {
             position: -webkit-sticky;
             top: 0;
 
-            @media screen and (max-width: 1200px) {
-                flex-grow: 0;
-                flex-shrink: 1;
-                flex-basis: 100%;
-                margin: 0 auto;
+            @media screen and (max-width:1200px) {
+                flex-basis: 300px;
             }
 
             h3 {
@@ -1141,11 +1137,12 @@ hr {
                 }
 
                 .num {
-                    display: block;
+                    display: inline-block;
                     font-size: 1em;
                     font-weight: normal;
                     line-height: 1.35em;
                     color: rgba(255, 255, 255, 0.5);
+                    margin-right: .5em;
                 }
             }
 
@@ -1177,6 +1174,7 @@ hr {
                     flex-shrink: 1;
                     flex-basis: 50%;
                     padding-right: 1em;
+                    margin-bottom: 2em;
 
                     @include screen('mobile') {
                         flex-basis: 80%;
@@ -1220,8 +1218,10 @@ hr {
 
                         li {
                             text-align: left;
+                            font-size: 1.125em;
                             line-height: 1.45em;
                             margin-bottom: 0.5em;
+                            color: rgba(255, 255, 255, .75);
                         }
                     }
                 }
@@ -1243,15 +1243,24 @@ hr {
 .download_link {
     position: relative;
 
-    .container {
-        display: flex;
-        justify-content: flex-start;
-        flex-flow: row nowrap;
 
-        @include screen('mobile') {
-            flex-flow: row wrap;
-            justify-content: center;
+    .container {
+
+
+        .download_content {
+            display: flex;
+            justify-content: flex-start;
+            flex-flow: row nowrap;
+            border-top: 1px solid rgba(255, 255, 255, .5);
+            padding: 3em 0em;
+
+            @include screen('mobile') {
+                flex-flow: row wrap;
+                justify-content: center;
+            }
         }
+
+
 
         .item {
             flex-grow: 0;
@@ -1346,7 +1355,8 @@ hr {
 }
 
 // resource
-.inner_resource {
+.inner_resource,
+.inner_faq {
     display: flex;
     flex-grow: 0;
     flex-shrink: 1;
@@ -1364,6 +1374,9 @@ hr {
         margin-right: 4em;
         text-align: left;
 
+        @media screen and (max-width:1200px) {
+            flex-basis: 300px;
+        }
 
 
         @include screen('tablet') {
@@ -1415,7 +1428,8 @@ hr {
         }
     }
 
-    .resource_content {
+    .resource_content,
+    .faq_content {
         flex-grow: 1;
         flex-shrink: 1;
         flex-basis: auto;
@@ -1428,6 +1442,8 @@ hr {
         align-items: flex-start;
         align-content: flex-start;
         padding-left: 1em;
+        padding-bottom: 5em;
+
 
         @include screen('tablet') {
             flex-basis: 100%;
@@ -1480,4 +1496,78 @@ hr {
             }
         }
     }
+
+    .faq_content {
+        ul {
+            margin: 0;
+
+            li {
+                display: block;
+                margin-bottom: 1em;
+                padding-bottom: 1em;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+
+                &:last-child {
+                    border: none;
+                }
+
+                a {
+                    display: block;
+                    font-size: 1.5em;
+                    padding: .5em 0;
+                    color: #FFF;
+                    position: relative;
+                    line-height: 1.35em;
+
+                    &:before {
+                        position: absolute;
+                        content: "";
+                        width: 12px;
+                        height: 2px;
+                        background-color: $secondaryColor;
+                        left: -1.5em;
+                        top: 1em;
+                    }
+
+                    &:after {
+                        position: absolute;
+                        content: "";
+                        width: 2px;
+                        height: 12px;
+                        background-color: $secondaryColor;
+                        left: -1.3em;
+                        top: .8em;
+                    }
+                }
+
+                p {
+                    color: rgba(255, 255, 255, .5);
+                }
+            }
+        }
+
+        .contact_us {
+            flex-grow: 0;
+            flex-shrink: 1;
+            flex-basis: 100%;
+
+            ul {
+                margin-bottom: 4em;
+
+                li {
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+                    font-size: 1.125em;
+
+                    &:last-child {
+                        border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+                    }
+
+                    span {
+                        color: #FFF;
+                    }
+                }
+            }
+        }
+    }
+
 }
