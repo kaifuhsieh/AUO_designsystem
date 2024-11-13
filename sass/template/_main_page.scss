@@ -282,10 +282,12 @@ hr {
         h2 {
             text-align: left;
             background: rgb(0, 205, 255);
-            background: linear-gradient(145deg,
-                    rgba(0, 205, 255, 1) 20%,
-                    rgb(11, 105, 173) 50%,
-                    rgba(87, 255, 190, 1) 80%);
+            background: linear-gradient(
+                145deg,
+                rgba(0, 205, 255, 1) 20%,
+                rgb(11, 105, 173) 50%,
+                rgba(87, 255, 190, 1) 80%
+            );
             background-size: 150%;
             color: transparent;
             background-clip: text;
@@ -310,10 +312,12 @@ hr {
 
             @include screen('xs_mobile') {
                 font-size: 3em;
-                background: linear-gradient(145deg,
-                        rgba(0, 205, 255, 1) 20%,
-                        rgb(22, 138, 221) 50%,
-                        rgba(87, 255, 190, 1) 80%);
+                background: linear-gradient(
+                    145deg,
+                    rgba(0, 205, 255, 1) 20%,
+                    rgb(22, 138, 221) 50%,
+                    rgba(87, 255, 190, 1) 80%
+                );
                 color: transparent;
                 background-clip: text;
                 margin: 0 0 1em;
@@ -485,10 +489,12 @@ hr {
             h2.title {
                 margin-bottom: 3em;
                 background: rgb(0, 205, 255);
-                background: linear-gradient(145deg,
-                        rgba(0, 205, 255, 1) 20%,
-                        rgb(11, 105, 173) 50%,
-                        rgba(87, 255, 190, 1) 80%);
+                background: linear-gradient(
+                    145deg,
+                    rgba(0, 205, 255, 1) 20%,
+                    rgb(11, 105, 173) 50%,
+                    rgba(87, 255, 190, 1) 80%
+                );
                 background-size: 150%;
                 color: transparent;
                 background-clip: text;
@@ -722,6 +728,7 @@ hr {
 
                 @include screen('mobile') {
                     flex-basis: 100%;
+                    padding-top: 4em;
                     margin-bottom: 4em;
                 }
             }
@@ -747,10 +754,12 @@ hr {
                     margin: 0 0 0.5em;
                     display: inline-block;
                     background: rgb(0, 205, 255);
-                    background: linear-gradient(145deg,
-                            rgba(0, 205, 255, 1) 20%,
-                            rgb(11, 105, 173) 60%,
-                            rgba(87, 255, 190, 1) 100%);
+                    background: linear-gradient(
+                        145deg,
+                        rgba(0, 205, 255, 1) 20%,
+                        rgb(11, 105, 173) 60%,
+                        rgba(87, 255, 190, 1) 100%
+                    );
                     background-size: 150%;
                     color: transparent;
                     background-clip: text;
@@ -879,7 +888,7 @@ hr {
     }
 
     h2.title {
-        &+p {
+        & + p {
             max-width: 720px;
             margin: 0 auto;
             display: block;
@@ -1071,7 +1080,7 @@ hr {
             position: -webkit-sticky;
             top: 0;
 
-            @media screen and (max-width:1200px) {
+            @media screen and (max-width: 1200px) {
                 flex-basis: 300px;
             }
 
@@ -1088,10 +1097,12 @@ hr {
                 line-height: 1.45em;
                 padding-top: 3rem;
                 background: rgb(0, 205, 255);
-                background: linear-gradient(145deg,
-                        rgba(0, 205, 255, 1) 0%,
-                        rgb(57, 161, 235) 60%,
-                        rgba(87, 255, 190, 1) 80%);
+                background: linear-gradient(
+                    145deg,
+                    rgba(0, 205, 255, 1) 0%,
+                    rgb(57, 161, 235) 60%,
+                    rgba(87, 255, 190, 1) 80%
+                );
                 background-size: 150%;
                 color: transparent;
                 background-clip: text;
@@ -1105,10 +1116,12 @@ hr {
 
                     padding: 2em 0;
                     background: rgb(0, 205, 255);
-                    background: linear-gradient(145deg,
-                            rgba(0, 205, 255, 1) 0%,
-                            rgb(57, 161, 235) 60%,
-                            rgba(87, 255, 190, 1) 80%);
+                    background: linear-gradient(
+                        145deg,
+                        rgba(0, 205, 255, 1) 0%,
+                        rgb(57, 161, 235) 60%,
+                        rgba(87, 255, 190, 1) 80%
+                    );
                     background-size: 150%;
                     color: transparent;
                     background-clip: text;
@@ -1151,7 +1164,7 @@ hr {
                     font-weight: normal;
                     line-height: 1.35em;
                     color: $secondaryColor;
-                    margin-right: .25em;
+                    margin-right: 0.25em;
                 }
             }
 
@@ -1186,7 +1199,7 @@ hr {
                     margin-bottom: 2em;
 
                     @include screen('mobile') {
-                        flex-basis: 80%;
+                        flex-basis: 100%;
                         text-align: center;
                         margin: 0 auto 1em 0;
                         padding-top: 2em;
@@ -1203,6 +1216,7 @@ hr {
 
                         @include screen('mobile') {
                             margin: 0 auto;
+                            width: 100%;
                         }
 
                         img {
@@ -1210,9 +1224,8 @@ hr {
                             width: 100%;
                             height: 100%;
                             object-fit: cover;
-
-
-
+                            left: 0;
+                            top: 0;
                         }
                     }
 
@@ -1230,7 +1243,7 @@ hr {
                             font-size: 1.125em;
                             line-height: 1.45em;
                             margin-bottom: 0.5em;
-                            color: rgba(255, 255, 255, .75);
+                            color: rgba(255, 255, 255, 0.75);
                         }
                     }
                 }
@@ -1244,8 +1257,6 @@ hr {
                 margin-top: 1em;
             }
         }
-
-
     }
 }
 
@@ -1257,7 +1268,7 @@ hr {
             display: flex;
             justify-content: flex-start;
             flex-flow: row nowrap;
-            border-top: 1px solid rgba(255, 255, 255, .5);
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
             padding: 5em 0em 3em;
 
             @include screen('mobile') {
@@ -1266,8 +1277,6 @@ hr {
                 padding: 2em 0;
             }
         }
-
-
 
         .item {
             flex-grow: 0;
@@ -1309,14 +1318,14 @@ hr {
 
                 &:before {
                     position: absolute;
-                    content: "";
+                    content: '';
                     width: 40px;
                     height: 40px;
                     background: url(../images/icon_download.png) no-repeat center center;
                     background-size: 100%;
                     top: -3em;
                     right: 1em;
-                    transition: .3s ease-out;
+                    transition: 0.3s ease-out;
                 }
 
                 &:hover,
@@ -1329,7 +1338,7 @@ hr {
                     }
 
                     &:before {
-                        top: 1em
+                        top: 1em;
                     }
                 }
 
@@ -1409,10 +1418,9 @@ hr {
         margin-right: 4em;
         text-align: left;
 
-        @media screen and (max-width:1200px) {
+        @media screen and (max-width: 1200px) {
             flex-basis: 300px;
         }
-
 
         @include screen('tablet') {
             flex-basis: 100%;
@@ -1427,10 +1435,12 @@ hr {
             line-height: 1.45em;
             padding-top: 3rem;
             background: rgb(0, 205, 255);
-            background: linear-gradient(145deg,
-                    rgba(0, 205, 255, 1) 0%,
-                    rgb(57, 161, 235) 60%,
-                    rgba(87, 255, 190, 1) 80%);
+            background: linear-gradient(
+                145deg,
+                rgba(0, 205, 255, 1) 0%,
+                rgb(57, 161, 235) 60%,
+                rgba(87, 255, 190, 1) 80%
+            );
             background-size: 150%;
             color: transparent;
             background-clip: text;
@@ -1444,10 +1454,12 @@ hr {
 
                 padding: 2em 0;
                 background: rgb(0, 205, 255);
-                background: linear-gradient(145deg,
-                        rgba(0, 205, 255, 1) 0%,
-                        rgb(57, 161, 235) 60%,
-                        rgba(87, 255, 190, 1) 80%);
+                background: linear-gradient(
+                    145deg,
+                    rgba(0, 205, 255, 1) 0%,
+                    rgb(57, 161, 235) 60%,
+                    rgba(87, 255, 190, 1) 80%
+                );
                 background-size: 150%;
                 color: transparent;
                 background-clip: text;
@@ -1478,7 +1490,6 @@ hr {
         align-content: flex-start;
         padding-bottom: 5em;
 
-
         @include screen('tablet') {
             flex-basis: 100%;
         }
@@ -1496,7 +1507,7 @@ hr {
             flex-grow: 0;
             flex-shrink: 1;
             flex-basis: 260px;
-            margin: .25em 0 1em;
+            margin: 0.25em 0 1em;
             color: $secondaryColor;
         }
 
@@ -1515,14 +1526,14 @@ hr {
                 flex-shrink: 1;
                 flex-basis: 100%;
                 font-size: 1.125em;
-                padding: .25em 0 .5em .25em;
+                padding: 0.25em 0 0.5em 0.25em;
                 list-style-position: inside;
                 border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-                color: rgba(255, 255, 255, .5);
+                color: rgba(255, 255, 255, 0.5);
 
                 a {
                     display: inline-block;
-                    color: #FFF;
+                    color: #fff;
                     font-weight: normal;
                     padding-left: 0.5em;
 
@@ -1530,10 +1541,7 @@ hr {
                     &:focus {
                         color: $aHover;
                     }
-
-                    ;
                 }
-
             }
         }
     }
@@ -1564,8 +1572,8 @@ hr {
                 a {
                     display: block;
                     font-size: 1.5em;
-                    padding: .5em 0;
-                    color: #FFF;
+                    padding: 0.5em 0;
+                    color: #fff;
                     position: relative;
                     line-height: 1.35em;
 
@@ -1581,7 +1589,7 @@ hr {
 
                     &:before {
                         position: absolute;
-                        content: "";
+                        content: '';
                         width: 12px;
                         height: 2px;
                         background-color: $secondaryColor;
@@ -1595,7 +1603,7 @@ hr {
 
                     &:after {
                         position: absolute;
-                        content: "";
+                        content: '';
                         width: 2px;
                         height: 12px;
                         background-color: $secondaryColor;
@@ -1610,13 +1618,11 @@ hr {
                     &:hover,
                     &:focus {
                         color: $aHover;
-
                     }
-
                 }
 
                 p {
-                    color: rgba(255, 255, 255, .5);
+                    color: rgba(255, 255, 255, 0.5);
                 }
             }
         }
@@ -1631,8 +1637,6 @@ hr {
                 display: block;
                 padding: 0;
 
-
-
                 li {
                     border-bottom: 1px solid rgba(255, 255, 255, 0.25);
                     font-size: 1.125em;
@@ -1642,10 +1646,8 @@ hr {
                     }
 
                     span {
-                        color: #FFF;
+                        color: #fff;
                     }
-
-
                 }
             }
 
@@ -1659,5 +1661,4 @@ hr {
             }
         }
     }
-
 }
