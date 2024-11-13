@@ -1046,6 +1046,7 @@ hr {
 
 .inner_list {
     margin-bottom: 8em;
+    height: 300em;
 
     .container {
         display: flex;
@@ -1062,14 +1063,16 @@ hr {
             border-top: 1px solid rgba(255, 255, 255, 0.5);
             margin-right: 4em;
             text-align: left;
+            position: sticky;
+            position: -webkit-sticky;
+            top: 0;
 
-            @media screen and (max-width:1200px) {
+            @media screen and (max-width: 1200px) {
                 flex-grow: 0;
                 flex-shrink: 1;
                 flex-basis: 100%;
                 margin: 0 auto;
             }
-
 
             h3 {
                 font-size: 3em;
@@ -1156,15 +1159,13 @@ hr {
 
             table {
                 border: none;
-                border-bottom: 1px solid rgba(255, 255, 255, .25);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.25);
                 // border-top: 1px solid rgba(255, 255, 255, .25);
 
                 th,
                 td {
                     border: none;
                 }
-
-
             }
 
             .service_info {
@@ -1234,6 +1235,8 @@ hr {
                 margin-top: 1em;
             }
         }
+
+
     }
 }
 
@@ -1255,13 +1258,12 @@ hr {
             flex-shrink: 1;
             flex-basis: 33.3333%;
             margin: 0 1% 2em;
-            height: 24em;
+            height: 14em;
             position: relative;
 
             @include screen('tablet') {
                 flex-basis: 50%;
             }
-
 
             @include screen('mobile') {
                 max-width: 300px;
@@ -1281,7 +1283,7 @@ hr {
                 flex-flow: row wrap;
                 display: flex;
                 align-content: flex-end;
-                padding: 2em 1.5em;
+                padding: 2em 1.5em 1em;
                 border: 1px solid transparent;
                 border-image: linear-gradient(145deg, $secondaryColor, $lightColor);
                 border-image-slice: 1;
@@ -1300,7 +1302,7 @@ hr {
 
                 img {
                     position: absolute;
-                    width: 90px;
+                    width: 180px;
                     top: 2em;
                     left: 2em;
                 }
@@ -1314,7 +1316,7 @@ hr {
                     flex-grow: 0;
                     flex-shrink: 1;
                     flex-basis: 100%;
-                    margin: 0 0 0.5em;
+                    margin: 0 0 0.25em;
 
                     br {
                         display: none;
@@ -1338,6 +1340,143 @@ hr {
                     height: 3em;
                     text-align: left;
                 }
+            }
+        }
+    }
+}
+
+// resource
+.inner_resource {
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 100%;
+
+    @include screen('tablet') {
+        flex-flow: row wrap;
+    }
+
+    .inner_h3_title {
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: 450px;
+        border-top: 1px solid rgba(255, 255, 255, 0.5);
+        margin-right: 4em;
+        text-align: left;
+
+
+
+        @include screen('tablet') {
+            flex-basis: 100%;
+        }
+
+        h3 {
+            font-size: 3em;
+            color: #fff;
+            text-align: left;
+            margin: 0;
+            font-weight: normal;
+            line-height: 1.45em;
+            padding-top: 3rem;
+            background: rgb(0, 205, 255);
+            background: linear-gradient(145deg,
+                    rgba(0, 205, 255, 1) 0%,
+                    rgb(57, 161, 235) 60%,
+                    rgba(87, 255, 190, 1) 80%);
+            background-size: 150%;
+            color: transparent;
+            background-clip: text;
+            line-height: 1.25em;
+            text-fill-color: transparent;
+            background-position: 100% center;
+            animation: h2_animation 5s ease-in-out infinite;
+
+            @include screen('tablet') {
+                font-size: 2em;
+
+                padding: 2em 0;
+                background: rgb(0, 205, 255);
+                background: linear-gradient(145deg,
+                        rgba(0, 205, 255, 1) 0%,
+                        rgb(57, 161, 235) 60%,
+                        rgba(87, 255, 190, 1) 80%);
+                background-size: 150%;
+                color: transparent;
+                background-clip: text;
+                margin: 0;
+            }
+
+            small {
+                display: block;
+                font-size: 1rem;
+                font-weight: normal;
+                color: rgba(255, 255, 255, 0.75);
+            }
+        }
+    }
+
+    .resource_content {
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: auto;
+        border-top: 1px solid rgba(255, 255, 255, 0.5);
+        color: #fff;
+        text-align: left;
+        padding-top: 4.5rem;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: flex-start;
+        align-content: flex-start;
+        padding-left: 1em;
+
+        @include screen('tablet') {
+            flex-basis: 100%;
+        }
+
+        h4 {
+            font-size: 1.5em;
+            font-weight: normal;
+            flex-grow: 0;
+            flex-shrink: 1;
+            flex-basis: 200px;
+            margin: 0 0 1em;
+            color: $secondaryColor;
+        }
+
+        ol {
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 70%;
+            display: flex;
+            flex-flow: row wrap;
+            margin: 0 0 3em;
+            padding: 0;
+
+            li {
+                text-align: left;
+                flex-grow: 0;
+                flex-shrink: 1;
+                flex-basis: 100%;
+                font-size: 1.125em;
+                padding: .25em 0 .5em .25em;
+                list-style-position: inside;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+                color: rgba(255, 255, 255, .5);
+
+                a {
+                    display: inline-block;
+                    color: #FFF;
+                    font-weight: normal;
+                    padding-left: 0.5em;
+
+                    &:hover,
+                    &:focus {
+                        color: $aHover;
+                    }
+
+                    ;
+                }
+
             }
         }
     }
