@@ -1,11 +1,11 @@
 $(function () {
     // a[#]
-    $('a').click(function (e) {
-        if ($(this).attr('href') === '#') {
-            $(this).addClass('nolink');
-            e.preventDefault();
-        }
-    });
+    // $('a').click(function (e) {
+    //     if ($(this).attr('href') === '#') {
+    //         $(this).addClass('nolink');
+    //         e.preventDefault();
+    //     }
+    // });
 
     // submenu
     var submenuLength = $('.sidebar').find('.submenu').length;
@@ -698,4 +698,16 @@ $(document).ready(function () {
     //         }
     //     );
     // });
+    /*-----------------------------------*/
+    //faq
+    $('.faq_content>ul>li>a').each(function () {
+        $(this).click(function (e) {
+            // $(this).parents('li').siblings().children('a').stop().removeClass('active');
+            $(this).stop().toggleClass('active');
+            $(this).next('.faq_answer').stop().slideToggle();
+            $(this).parent().siblings('.faq_answer').stop().slideToggle();
+            $(this).blur();
+            e.preventDefault();
+        });
+    });
 });

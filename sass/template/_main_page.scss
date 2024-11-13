@@ -705,7 +705,7 @@ hr {
             height: 20em;
             position: sticky;
             top: 20%;
-            padding: 5em 0;
+            padding: 0 0 5em 0;
             background-color: $primaryColor;
 
             @include screen('mobile') {
@@ -731,9 +731,14 @@ hr {
                 flex-shrink: 1;
                 flex-basis: 40%;
                 text-align: left;
+                padding: 2em;
+                border-top: 1px solid $secondaryColor;
+                margin-right: 1em;
 
                 @include screen('mobile') {
                     flex-basis: 100%;
+                    border-top: none;
+                    margin-right: 0em;
                 }
 
                 h3 {
@@ -1298,6 +1303,19 @@ hr {
                 border-image-slice: 1;
                 transition: 0.3s ease-out;
                 background-color: rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+
+                &:before {
+                    position: absolute;
+                    content: "";
+                    width: 40px;
+                    height: 40px;
+                    background: url(../images/icon_download.png) no-repeat center center;
+                    background-size: 100%;
+                    top: -3em;
+                    right: 1em;
+                    transition: .3s ease-out;
+                }
 
                 &:hover,
                 &:focus {
@@ -1306,6 +1324,10 @@ hr {
 
                     @include screen('mobile') {
                         transform: none;
+                    }
+
+                    &:before {
+                        top: 1em
                     }
                 }
 
@@ -1498,8 +1520,13 @@ hr {
     }
 
     .faq_content {
+        @include screen('tablet') {
+            padding-left: 0;
+        }
+
         ul {
             margin: 0;
+            width: 100%;
 
             li {
                 display: block;
@@ -1511,6 +1538,10 @@ hr {
                     border: none;
                 }
 
+                .faq_answer {
+                    display: none;
+                }
+
                 a {
                     display: block;
                     font-size: 1.5em;
@@ -1519,14 +1550,28 @@ hr {
                     position: relative;
                     line-height: 1.35em;
 
+                    @include screen('mobile') {
+                        font-size: 1.25em;
+                    }
+
+                    &.active {
+                        &:after {
+                            display: none;
+                        }
+                    }
+
                     &:before {
                         position: absolute;
                         content: "";
                         width: 12px;
                         height: 2px;
                         background-color: $secondaryColor;
-                        left: -1.5em;
-                        top: 1em;
+                        left: -30px;
+                        top: 25px;
+
+                        @include screen('mobile') {
+                            top: 23px;
+                        }
                     }
 
                     &:after {
@@ -1535,9 +1580,20 @@ hr {
                         width: 2px;
                         height: 12px;
                         background-color: $secondaryColor;
-                        left: -1.3em;
-                        top: .8em;
+                        left: -25px;
+                        top: 20px;
+
+                        @include screen('mobile') {
+                            top: 18px;
+                        }
                     }
+
+                    &:hover,
+                    &:focus {
+                        color: $aHover;
+
+                    }
+
                 }
 
                 p {
@@ -1553,6 +1609,10 @@ hr {
 
             ul {
                 margin-bottom: 4em;
+                display: block;
+                padding: 0;
+
+
 
                 li {
                     border-bottom: 1px solid rgba(255, 255, 255, 0.25);
@@ -1565,6 +1625,17 @@ hr {
                     span {
                         color: #FFF;
                     }
+
+
+                }
+            }
+
+            .btn_grp {
+                a {
+                    width: 80%;
+                    margin: 0 auto 1em;
+                    text-align: left;
+                    justify-content: center;
                 }
             }
         }
