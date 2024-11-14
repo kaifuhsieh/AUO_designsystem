@@ -716,6 +716,7 @@ hr {
 
             @include screen('mobile') {
                 flex-flow: row wrap;
+                background-color: none;
             }
 
             .pic {
