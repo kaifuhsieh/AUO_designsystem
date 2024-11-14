@@ -1,11 +1,11 @@
 $(function () {
     // a[#]
-    // $('a').click(function (e) {
-    //     if ($(this).attr('href') === '#') {
-    //         $(this).addClass('nolink');
-    //         e.preventDefault();
-    //     }
-    // });
+    $('a').click(function (e) {
+        if ($(this).attr('href') === '#') {
+            $(this).addClass('nolink');
+            e.preventDefault();
+        }
+    });
 
     // submenu
     var submenuLength = $('.sidebar').find('.submenu').length;
