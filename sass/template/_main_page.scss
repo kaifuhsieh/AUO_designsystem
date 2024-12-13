@@ -340,8 +340,9 @@ hr {
             margin: 0 0 .5em;
             max-width: 600px;
 
-            @media screen and (min-width: 1480px) {
+            @media screen and (max-width: 1480px) {
                 font-size: 6em;
+                margin: 0 0 .75em;
                 animation: h2_animation 5s ease-in-out infinite;
             }
 
@@ -891,14 +892,12 @@ hr {
     .frame {
         aspect-ratio: 1350/960;
         width: 100%;
-        max-width: 1350px;
+        max-width: 1250px;
         margin: 0 auto 3em;
         position: relative;
         z-index: 2;
 
-        @media screen and (max-width: 1520px) {
-            max-width: 1000px;
-        }
+
 
         &:before {
             position: absolute;
