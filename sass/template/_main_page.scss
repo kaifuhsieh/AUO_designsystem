@@ -754,6 +754,8 @@ hr {
             @include screen('mobile') {
                 flex-flow: row wrap;
                 background: none;
+                position: relative;
+                top: auto;
             }
 
             .pic {
@@ -767,7 +769,9 @@ hr {
                 @include screen('mobile') {
                     flex-basis: 100%;
                     padding-top: 4em;
-                    margin-bottom: 4em;
+                    margin: 2em 0;
+
+
                 }
             }
 
@@ -825,6 +829,7 @@ hr {
 
                     @include screen('mobile') {
                         font-size: 0.938em;
+                        margin-bottom: 2em;
                     }
                 }
             }
