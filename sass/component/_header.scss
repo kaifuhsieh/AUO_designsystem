@@ -27,13 +27,16 @@
         display: flex;
         flex-flow: row wrap;
         align-items: center;
-        padding: 0 2em;
+        padding: 0 3em;
         position: relative;
         height: 100px;
         transition: 0.3s ease-out;
         align-content: center;
         align-items: stretch;
         justify-content: flex-end;
+        justify-content: flex-start;
+
+
 
         @media screen and (max-width: 1200px) {
             padding: 0 1em;
@@ -47,6 +50,28 @@
             height: 60px;
             padding-right: 0;
         }
+    }
+
+    .auo_college {
+        flex-grow: 0;
+        flex-shrink: 1;
+        flex-basis: auto;
+        text-align: right;
+        display: flex;
+        height: 60px;
+        align-items: center;
+        margin: 0 0 0 auto;
+
+        @include screen('mobile') {
+            display: none;
+        }
+
+        p {
+            margin: 0 0 0 1em;
+            padding-left: 1em;
+            border-left: 1px solid $secondaryColor;
+        }
+
     }
 
     h1 {
@@ -159,14 +184,14 @@
             display: none;
         }
 
-        & > ul {
+        &>ul {
             list-style: none;
             display: flex;
             justify-content: flex-end;
             margin: 0;
             align-self: stretch;
 
-            & > li {
+            &>li {
                 font-weight: 700;
                 margin-right: 28px;
                 align-items: center;
@@ -210,7 +235,7 @@
                     }
                 }
 
-                & > ul {
+                &>ul {
                     position: absolute;
                     width: 200px;
                     height: 200px;
@@ -224,7 +249,7 @@
                     display: none;
                     overflow: hidden;
 
-                    & > li {
+                    &>li {
                         display: block;
 
                         a {
@@ -250,7 +275,7 @@
                             }
                         }
 
-                        & > ul {
+                        &>ul {
                             position: relative;
                             width: 100%;
                             background-color: transparent;
@@ -290,8 +315,7 @@
             height: 48px;
         }
 
-        @include screen('mobile') {
-        }
+        @include screen('mobile') {}
 
         a {
             border-radius: 50%;
@@ -325,8 +349,7 @@
                 }
             }
 
-            @include screen('mobile') {
-            }
+            @include screen('mobile') {}
         }
     }
 
@@ -369,7 +392,7 @@
             padding: 0;
             display: none;
 
-            & > li {
+            &>li {
                 display: block;
                 padding: 1em 0;
                 background-color: none;
@@ -559,14 +582,15 @@
             nav {
                 transition: 0.3s ease-out;
 
-                > ul {
-                    > li {
-                        & > ul {
+                >ul {
+                    >li {
+                        &>ul {
                             top: 65px;
                             transition: 0.3s ease-out;
                         }
 
                         a {
+
                             &:hover,
                             &:focus {
                                 color: $aHover;
@@ -578,6 +602,7 @@
 
             .language {
                 a {
+
                     &:hover,
                     &:focus {
                         color: $aHover;
